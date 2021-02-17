@@ -34,23 +34,30 @@
             </objects>
             <point key="canvasLocation" x="989.85507246376824" y="76.339285714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Set Up View Controller-->
         <scene sceneID="j26-mi-Adj">
             <objects>
-                <viewController id="mlC-cn-pLV" sceneMemberID="viewController">
+                <viewController id="mlC-cn-pLV" customClass="SetUpViewController" customModule="Swift6Tiktok1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zE9-NA-WV6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcx-Ie-Kwr">
-                                <rect key="frame" x="29" y="748" width="100" height="100"/>
+                                <rect key="frame" x="29" y="748" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="album"/>
+                                <connections>
+                                    <action selector="openAlbum:" destination="mlC-cn-pLV" eventType="touchUpInside" id="qjM-2G-Nxi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F26-JO-QXE">
-                                <rect key="frame" x="294" y="748" width="100" height="100"/>
+                                <rect key="frame" x="294" y="748" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="flip"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEh-XN-yyO" customClass="SwiftyRecordButton">
+                                <rect key="frame" x="177" y="758" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ads-Oz-vHg"/>
@@ -58,6 +65,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xua-Xy-YZR"/>
                     <connections>
+                        <outlet property="captureButton" destination="OEh-XN-yyO" id="UcW-d3-iZp"/>
+                        <outlet property="flipCameraButton" destination="F26-JO-QXE" id="M68-1i-Yug"/>
                         <segue destination="gDT-8G-f16" kind="show" id="YN0-r0-tUe"/>
                     </connections>
                 </viewController>

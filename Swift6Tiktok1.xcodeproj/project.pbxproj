@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4316FA8225DBB33100D8CBB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA8125DBB33100D8CBB8 /* ViewController.swift */; };
+		4316FA8525DBC45500D8CBB8 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA8425DBC45500D8CBB8 /* SetUpViewController.swift */; };
+		4316FA8B25DBCACA00D8CBB8 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA8A25DBCACA00D8CBB8 /* SwiftyRecordButton.swift */; };
+		4316FA8E25DBCAD300D8CBB8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA8D25DBCAD300D8CBB8 /* LoadingView.swift */; };
+		4316FA9125DBCAEF00D8CBB8 /* AuthCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA9025DBCAEF00D8CBB8 /* AuthCheck.swift */; };
+		4316FA9425DBCAFA00D8CBB8 /* VAVideoCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA9325DBCAFA00D8CBB8 /* VAVideoCompressor.swift */; };
 		43E4237525DBAEC100F09663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E4237425DBAEC100F09663 /* AppDelegate.swift */; };
 		43E4237725DBAEC100F09663 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E4237625DBAEC100F09663 /* SceneDelegate.swift */; };
 		43E4237C25DBAEC100F09663 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E4237A25DBAEC100F09663 /* Main.storyboard */; };
@@ -19,6 +24,11 @@
 /* Begin PBXFileReference section */
 		23738FC2EA395546F734A737 /* Pods_Swift6Tiktok1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift6Tiktok1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4316FA8125DBB33100D8CBB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4316FA8425DBC45500D8CBB8 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
+		4316FA8A25DBCACA00D8CBB8 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
+		4316FA8D25DBCAD300D8CBB8 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4316FA9025DBCAEF00D8CBB8 /* AuthCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCheck.swift; sourceTree = "<group>"; };
+		4316FA9325DBCAFA00D8CBB8 /* VAVideoCompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAVideoCompressor.swift; sourceTree = "<group>"; };
 		43E4237125DBAEC100F09663 /* Swift6Tiktok1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift6Tiktok1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E4237425DBAEC100F09663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43E4237625DBAEC100F09663 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +73,34 @@
 			isa = PBXGroup;
 			children = (
 				4316FA8125DBB33100D8CBB8 /* ViewController.swift */,
+				4316FA8425DBC45500D8CBB8 /* SetUpViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4316FA8725DBCA7100D8CBB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4316FA8A25DBCACA00D8CBB8 /* SwiftyRecordButton.swift */,
+				4316FA8D25DBCAD300D8CBB8 /* LoadingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4316FA8825DBCA7D00D8CBB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4316FA9025DBCAEF00D8CBB8 /* AuthCheck.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4316FA8925DBCA8800D8CBB8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4316FA9325DBCAFA00D8CBB8 /* VAVideoCompressor.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		43E4236825DBAEC100F09663 = {
@@ -90,6 +126,9 @@
 			children = (
 				43E4237425DBAEC100F09663 /* AppDelegate.swift */,
 				43E4237625DBAEC100F09663 /* SceneDelegate.swift */,
+				4316FA8925DBCA8800D8CBB8 /* Util */,
+				4316FA8825DBCA7D00D8CBB8 /* Model */,
+				4316FA8725DBCA7100D8CBB8 /* View */,
 				4316FA8025DBB31100D8CBB8 /* Controller */,
 				43E4237A25DBAEC100F09663 /* Main.storyboard */,
 				43E4237D25DBAEC400F09663 /* Assets.xcassets */,
@@ -213,9 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4316FA8B25DBCACA00D8CBB8 /* SwiftyRecordButton.swift in Sources */,
+				4316FA8525DBC45500D8CBB8 /* SetUpViewController.swift in Sources */,
 				4316FA8225DBB33100D8CBB8 /* ViewController.swift in Sources */,
+				4316FA9125DBCAEF00D8CBB8 /* AuthCheck.swift in Sources */,
 				43E4237525DBAEC100F09663 /* AppDelegate.swift in Sources */,
+				4316FA9425DBCAFA00D8CBB8 /* VAVideoCompressor.swift in Sources */,
 				43E4237725DBAEC100F09663 /* SceneDelegate.swift in Sources */,
+				4316FA8E25DBCAD300D8CBB8 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
