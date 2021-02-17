@@ -45,7 +45,28 @@ class EditViewController: UIViewController {
         self.addChild(playerController!)
         self.view.addSubview((playerController?.view)!)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
+        
+        let cancelButton = UIButton(frame: CGRect(x: 10.0, y: 10.0, width: 30.0, height: 30.0))
+        cancelButton.setImage(UIImage(named: "cancel"), for: UIControl.State())
+        cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        view.addSubview(cancelButton)
+        
         player?.play()
+    }
+    
+    @objc func cancel(){
+        // 画面を戻る
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func playerItemDidReachEnd(){
+        // リピート
+        if self.player != nil {
+            self.player?.seek(to: CMTime.zero)
+            self.player?.volume = 1
+            self.player?.play()
+        }
     }
     
 
