@@ -10,15 +10,7 @@ import SwiftyJSON
 import Alamofire
 
 class MusicModel {
-//    //アーティスト名
-//    var artistName:String?
-//    //曲名
-//    var trackCensoredName:String?
-//    //音源URL
-//    var preViewUrl:String?
-//    //ジャケ写
-//    var artworkUrl100:String?
-//
+
     var artistNameArray = [String]()
     var trackCensoredNameArray = [String]()
     var preViewUrlArray = [String]()
