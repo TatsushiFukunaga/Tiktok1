@@ -14,6 +14,8 @@
 		4316FA9125DBCAEF00D8CBB8 /* AuthCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA9025DBCAEF00D8CBB8 /* AuthCheck.swift */; };
 		4316FA9425DBCAFA00D8CBB8 /* VAVideoCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA9325DBCAFA00D8CBB8 /* VAVideoCompressor.swift */; };
 		4316FA9725DCE07300D8CBB8 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA9625DCE07200D8CBB8 /* EditViewController.swift */; };
+		4316FA9B25DD17DF00D8CBB8 /* SelectMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA9A25DD17DF00D8CBB8 /* SelectMusicViewController.swift */; };
+		4316FA9E25DE08B000D8CBB8 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316FA9D25DE08AF00D8CBB8 /* MusicModel.swift */; };
 		43E4237525DBAEC100F09663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E4237425DBAEC100F09663 /* AppDelegate.swift */; };
 		43E4237725DBAEC100F09663 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E4237625DBAEC100F09663 /* SceneDelegate.swift */; };
 		43E4237C25DBAEC100F09663 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E4237A25DBAEC100F09663 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		4316FA9025DBCAEF00D8CBB8 /* AuthCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCheck.swift; sourceTree = "<group>"; };
 		4316FA9325DBCAFA00D8CBB8 /* VAVideoCompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAVideoCompressor.swift; sourceTree = "<group>"; };
 		4316FA9625DCE07200D8CBB8 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		4316FA9A25DD17DF00D8CBB8 /* SelectMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMusicViewController.swift; sourceTree = "<group>"; };
+		4316FA9D25DE08AF00D8CBB8 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		43E4237125DBAEC100F09663 /* Swift6Tiktok1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift6Tiktok1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E4237425DBAEC100F09663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43E4237625DBAEC100F09663 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				4316FA8125DBB33100D8CBB8 /* ViewController.swift */,
 				4316FA8425DBC45500D8CBB8 /* SetUpViewController.swift */,
 				4316FA9625DCE07200D8CBB8 /* EditViewController.swift */,
+				4316FA9A25DD17DF00D8CBB8 /* SelectMusicViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				4316FA9025DBCAEF00D8CBB8 /* AuthCheck.swift */,
+				4316FA9D25DE08AF00D8CBB8 /* MusicModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			files = (
 				4316FA8B25DBCACA00D8CBB8 /* SwiftyRecordButton.swift in Sources */,
 				4316FA8525DBC45500D8CBB8 /* SetUpViewController.swift in Sources */,
+				4316FA9B25DD17DF00D8CBB8 /* SelectMusicViewController.swift in Sources */,
+				4316FA9E25DE08B000D8CBB8 /* MusicModel.swift in Sources */,
 				4316FA8225DBB33100D8CBB8 /* ViewController.swift in Sources */,
 				4316FA9125DBCAEF00D8CBB8 /* AuthCheck.swift in Sources */,
 				43E4237525DBAEC100F09663 /* AppDelegate.swift in Sources */,

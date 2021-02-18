@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="2579.7101449275365" y="64.955357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Music View Controller-->
         <scene sceneID="wAr-Ta-mhQ">
             <objects>
-                <viewController id="JCB-5k-qJ7" sceneMemberID="viewController">
+                <viewController id="JCB-5k-qJ7" customClass="SelectMusicViewController" customModule="Swift6Tiktok1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vSR-QH-PcI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,10 +189,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="z2Q-5C-XKU"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="GrZ-un-bjw" id="WpG-Tp-Q8s"/>
+                        <outlet property="tableView" destination="CWk-g3-oAl" id="eqQ-dY-2gj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCw-UI-L8Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3356.521739130435" y="75.669642857142847"/>
+            <point key="canvasLocation" x="3397" y="65"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="32d-5S-uGs">
