@@ -66,7 +66,34 @@ class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @objc func playButtonTap(_ sender: UIButton){
-        
+        print(sender.tag)
+        print(sender.debugDescription)
+        //音楽を止める
+        if player?.isPlaying == true {
+            player?.stop()
+        }
+        let url = URL(string: musicModel.preViewUrlArray[sender.tag])
+        downLoadMusicURL(url: url!)
+    }
+    
+    func downLoadMusicURL(url:URL){
+        var downLoadTask: URLSessionDownloadTask
+        downLoadTask = URLSession.shared.downloadTask(with: url, completionHandler: { (url, response, error) in
+            print(response)
+            self.play(url: url!)
+        })
+        downLoadTask.resume()
+    }
+    
+    func play(url:URL){
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.prepareToPlay()
+            player?.volume = 1
+            player?.play()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
     }
     
     @objc func favButtonTap(_ sender: UIButton){
