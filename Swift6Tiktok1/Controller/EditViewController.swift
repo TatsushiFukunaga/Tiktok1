@@ -69,6 +69,23 @@ class EditViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //selectVC
+        if segue.identifier == "selectVC" {
+            
+            let selectVC = segue.destination as! SelectMusicViewController
+            selectVC.passedURL = url
+            //非同期処理
+            DispatchQueue.global().async {
+                selectVC.resultHandler = { url,text1,text2 in
+                    //合成された動画のURL
+                    self.setUPVideoPlayer(url: URL(string: url)!)
+                }
+            }
+            
+        }
+        //shareVC
+    }
 
     /*
     // MARK: - Navigation

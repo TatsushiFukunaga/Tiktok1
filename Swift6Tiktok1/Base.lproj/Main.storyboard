@@ -122,7 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xxt-L7-CpP"/>
                     <connections>
-                        <segue destination="JCB-5k-qJ7" kind="presentation" id="9KS-5J-9vU"/>
+                        <segue destination="JCB-5k-qJ7" kind="presentation" identifier="selectVC" id="9KS-5J-9vU"/>
                         <segue destination="bGJ-T3-0xn" kind="show" id="giT-G7-5Lu"/>
                     </connections>
                 </viewController>

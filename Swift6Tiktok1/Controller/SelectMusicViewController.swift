@@ -20,6 +20,9 @@ class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableV
     var videoPath = String()
     var passedURL:URL?
     
+    //遷移元から処理を受け取るうロージャーのプロパティを用意
+    var resultHandler: ((String,String,String)->Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,6 +68,40 @@ class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    @objc func favButtonTap(_ sender: UIButton){
+        //音楽を止める
+        if player?.isPlaying == true {
+            player?.stop()
+        }
+        //loardingViewを出す
+        LoadingView.lockView()
+        //動画と音声を合成
+        VideoGenerator.fileName = "newAudioMovie"
+        VideoGenerator.current.mergeVideoWithAudio(videoUrl: passedURL!, audioUrl: URL(string: self.musicModel.preViewUrlArray[sender.tag])!) { (result) in
+            
+            LoadingView.unlockView()
+            
+            switch result {
+            
+            case .success(let url):
+                
+                self.videoPath = url.absoluteString
+                if let handler = self.resultHandler {
+                    
+                    handler(self.videoPath, self.musicModel.artistNameArray[sender.tag], self.musicModel.trackCensoredNameArray[sender.tag])
+                    
+                }
+                self.dismiss(animated: true, completion: nil)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        //合成ができたら値を渡しながら画面を戻る
+        
+    }
+    
+    
     @objc func playButtonTap(_ sender: UIButton){
         print(sender.tag)
         print(sender.debugDescription)
@@ -96,9 +133,6 @@ class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    @objc func favButtonTap(_ sender: UIButton){
-        
-    }
     
     func refleshData() {
         if searchTextField.text?.isEmpty != nil {
