@@ -72,6 +72,24 @@ class ShareViewController: UIViewController {
         textView.resignFirstResponder()
     }
     
+    @IBAction func savePhotoLibrary(_ sender: Any) {
+        
+        PHPhotoLibrary.shared().performChanges {
+            PHAssetChangeRequest
+                .creationRequestForAssetFromVideo(atFileURL: URL(string: self.passedURL)!)
+        } completionHandler: { (result, error) in
+            if error != nil {
+                print(error.debugDescription)
+                return
+            }
+            if result {
+                print("動画を保存しました！")
+            }
+        }
+    }
+    
+    
+    
     @objc func keyboardWillShow(notification: Notification?){
         let rect = (notification?.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         let duration: TimeInterval? = notification?.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
