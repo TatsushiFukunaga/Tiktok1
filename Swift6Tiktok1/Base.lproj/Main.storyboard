@@ -118,6 +118,9 @@
                                 <state key="normal" title="♫楽曲">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="showSelectVC:" destination="gDT-8G-f16" eventType="touchUpInside" id="kRu-it-tCW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xHi-bA-XUy"/>
@@ -126,7 +129,7 @@
                     <navigationItem key="navigationItem" id="Xxt-L7-CpP"/>
                     <connections>
                         <segue destination="JCB-5k-qJ7" kind="presentation" identifier="selectVC" id="9KS-5J-9vU"/>
-                        <segue destination="bGJ-T3-0xn" kind="show" id="giT-G7-5Lu"/>
+                        <segue destination="bGJ-T3-0xn" kind="show" identifier="shareVC" id="giT-G7-5Lu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7I5-Et-zdJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

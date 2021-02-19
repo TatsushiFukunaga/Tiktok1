@@ -68,6 +68,12 @@ class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        refleshData()
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @objc func favButtonTap(_ sender: UIButton){
         //音楽を止める
         if player?.isPlaying == true {

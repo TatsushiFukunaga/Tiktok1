@@ -62,7 +62,7 @@ class EditViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func playerItemDidReachEnd(){
+    @objc func playerItemDidReachEnd(_ nitification: Notification){
         // リピート
         if self.player != nil {
             self.player?.seek(to: CMTime.zero)
@@ -95,6 +95,11 @@ class EditViewController: UIViewController {
             shareVC.passedURL = self.passedURL
         }
     }
+    
+    @IBAction func showSelectVC(_ sender: Any) {
+        performSegue(withIdentifier: "selectVC", sender: nil)
+    }
+    
 
     @IBAction func next(_ sender: Any) {
         if captionString != nil {
