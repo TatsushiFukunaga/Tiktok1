@@ -240,6 +240,9 @@
                                 <rect key="frame" x="304" y="788" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="share"/>
+                                <connections>
+                                    <action selector="share:" destination="bGJ-T3-0xn" eventType="touchUpInside" id="9RX-WY-EGo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ham-TX-ReB"/>

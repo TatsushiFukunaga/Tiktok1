@@ -88,6 +88,13 @@ class ShareViewController: UIViewController {
         }
     }
     
+    @IBAction func share(_ sender: Any) {
+        //アクティビティViewにItemを掲載
+        let activityItems = [passedURL as Any,"\(textView.text!)\n\(captionString)\n#TikTokIOS14"] as [Any]
+        let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = self.view
+        activityController.popoverPresentationController?.sourceRect = self.view.frame
+    }
     
     
     @objc func keyboardWillShow(notification: Notification?){
