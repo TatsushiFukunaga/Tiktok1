@@ -107,6 +107,9 @@
                                 <state key="normal" title="次へ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="next:" destination="gDT-8G-f16" eventType="touchUpInside" id="h7l-c9-bwP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ani-eg-w3Y">
                                 <rect key="frame" x="43" y="819" width="90" height="30"/>
@@ -198,10 +201,10 @@
             </objects>
             <point key="canvasLocation" x="3397" y="65"/>
         </scene>
-        <!--View Controller-->
+        <!--Share View Controller-->
         <scene sceneID="32d-5S-uGs">
             <objects>
-                <viewController id="bGJ-T3-0xn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shareVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bGJ-T3-0xn" customClass="ShareViewController" customModule="Swift6Tiktok1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lra-cf-WEn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

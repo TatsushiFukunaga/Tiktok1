@@ -13,6 +13,8 @@ class EditViewController: UIViewController {
     var url:URL?
     var playerController:AVPlayerViewController?
     var player:AVPlayer?
+    var captionString = String()
+    var passedURL = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,13 +82,29 @@ class EditViewController: UIViewController {
                 selectVC.resultHandler = { url,text1,text2 in
                     //合成された動画のURL
                     self.setUPVideoPlayer(url: URL(string: url)!)
+                    self.captionString = text1 + "\n" + text2
+                    self.passedURL = url
                 }
             }
             
         }
         //shareVC
+        if segue.identifier == "shareVC" {
+            let shareVC = segue.destination as! ShareViewController
+            shareVC.captionString = self.captionString
+            shareVC.passedURL = self.passedURL
+        }
     }
 
+    @IBAction func next(_ sender: Any) {
+        if captionString != nil {
+            player?.pause()
+            performSegue(withIdentifier: "shareVC", sender: nil)
+        } else {
+            print("楽曲を選択してください")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
