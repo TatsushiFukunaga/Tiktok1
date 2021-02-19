@@ -15,6 +15,7 @@ class ShareViewController: UIViewController {
     var passedURL = String()
     var player: AVPlayer?
     var playerController: AVPlayerViewController?
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,49 @@ class ShareViewController: UIViewController {
         notification.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setUPVideoPlayer(url: URL(string: passedURL)!)
+    }
+    
+    func setUPVideoPlayer(url:URL) {
+        
+        playerController?.removeFromParent()
+        player = nil
+        
+        view.backgroundColor = .black
+        
+        playerController = AVPlayerViewController()
+        playerController?.videoGravity = .resizeAspectFill
+        playerController?.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - 100)
+        playerController?.showsPlaybackControls = false
+        playerController?.player = player!
+        self.addChild(playerController!)
+        self.view.addSubview((playerController?.view)!)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
+        
+        player?.play()
+    }
+    
+    @objc func playerItemDidReachEnd(_ nitification: Notification){
+        // リピート
+        if self.player != nil {
+            self.player?.seek(to: CMTime.zero)
+            self.player?.volume = 1
+            self.player?.play()
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textView.resignFirstResponder()
     }
     
     @objc func keyboardWillShow(notification: Notification?){
