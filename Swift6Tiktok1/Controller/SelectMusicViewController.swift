@@ -149,6 +149,10 @@ class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
+    @IBAction func searchAction(_ sender: Any) {
+        refleshData()
+    }
+    
     /*
     // MARK: - Navigation
 

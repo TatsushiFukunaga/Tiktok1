@@ -189,6 +189,9 @@
                                 <rect key="frame" x="326" y="32" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchAction:" destination="JCB-5k-qJ7" eventType="touchUpInside" id="JEw-bg-Gbx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9II-LX-gAJ"/>
