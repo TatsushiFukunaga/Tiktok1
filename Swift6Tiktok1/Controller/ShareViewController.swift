@@ -88,6 +88,13 @@ class ShareViewController: UIViewController {
         }
     }
     
+    @IBAction func back(_ sender: Any) {
+        player?.pause()
+        player = nil
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     @IBAction func share(_ sender: Any) {
         //アクティビティViewにItemを掲載
         let activityItems = [passedURL as Any,"\(textView.text!)\n\(captionString)\n#TikTokIOS14"] as [Any]
