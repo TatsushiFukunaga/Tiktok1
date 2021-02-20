@@ -56,7 +56,7 @@
                                 <state key="normal" image="flip"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEh-XN-yyO" customClass="SwiftyRecordButton">
-                                <rect key="frame" x="177" y="758" width="60" height="60"/>
+                                <rect key="frame" x="167" y="748" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                         </subviews>
@@ -67,7 +67,7 @@
                     <connections>
                         <outlet property="captureButton" destination="OEh-XN-yyO" id="UcW-d3-iZp"/>
                         <outlet property="flipCameraButton" destination="F26-JO-QXE" id="M68-1i-Yug"/>
-                        <segue destination="gDT-8G-f16" kind="show" id="YN0-r0-tUe"/>
+                        <segue destination="gDT-8G-f16" kind="show" identifier="EditVC" id="YN0-r0-tUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fkg-sN-KXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,7 +210,7 @@
         <!--Share View Controller-->
         <scene sceneID="32d-5S-uGs">
             <objects>
-                <viewController storyboardIdentifier="shareVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bGJ-T3-0xn" customClass="ShareViewController" customModule="Swift6Tiktok1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bGJ-T3-0xn" customClass="ShareViewController" customModule="Swift6Tiktok1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lra-cf-WEn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

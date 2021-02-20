@@ -56,8 +56,8 @@ class SetUpViewController: SwiftyCamViewController, SwiftyCamViewControllerDeleg
         videoURL = mediaURL
         picker.dismiss(animated: true, completion: nil)
         //　値を渡しながら画面遷移
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let editVC = storyboard?.instantiateViewController(withIdentifier: "EditVC") as! EditViewController
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let editVC = storyboard.instantiateViewController(withIdentifier: "EditVC") as! EditViewController
         editVC.url = videoURL
         self.navigationController?.pushViewController(editVC, animated: true)
     }
@@ -101,7 +101,7 @@ class SetUpViewController: SwiftyCamViewController, SwiftyCamViewControllerDeleg
 
             //値を渡しながら画面遷移
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let editVC = storyboard.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
+            let editVC = storyboard.instantiateViewController(withIdentifier: "EditVC") as! EditViewController
             videoURL = url
             editVC.url = videoURL
             self.navigationController?.pushViewController(editVC, animated: true)

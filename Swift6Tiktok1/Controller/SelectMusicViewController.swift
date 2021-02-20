@@ -10,7 +10,7 @@ import SDWebImage
 import AVFoundation
 import SwiftVideoGenerator
 
-class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MusicProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -139,11 +139,18 @@ class SelectMusicViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func catchData(count: Int) {
+        if count == 1 {
+            tableView.reloadData()
+        }
+    }
+    
     
     func refleshData() {
         if searchTextField.text?.isEmpty != nil {
             let urlString = "https://itunes.apple.com/search?term=\(String(describing: searchTextField.text!))&entity=song&country=jp"
             let encodeUrlString:String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            musicModel.musicDelegate = self
             musicModel.setData(resultCount: 50, encodeUrlString: encodeUrlString)
             searchTextField.resignFirstResponder()
         }

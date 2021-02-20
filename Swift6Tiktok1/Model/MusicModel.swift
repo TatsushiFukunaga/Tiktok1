@@ -9,12 +9,18 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
+protocol MusicProtocol {
+    func catchData(count:Int)
+}
+
 class MusicModel {
 
     var artistNameArray = [String]()
     var trackCensoredNameArray = [String]()
     var preViewUrlArray = [String]()
     var artworkUrl100Array = [String]()
+    
+    var musicDelegate: MusicProtocol?
     
     //JSON解析
     func setData(resultCount:Int, encodeUrlString:String){
@@ -46,6 +52,8 @@ class MusicModel {
                         self.preViewUrlArray.append(json["results"][i]["preViewUrl"].string!)
                         self.artworkUrl100Array.append(json["results"][i]["artworkUrl100"].string!)
                     }
+                    //すべてのデータが取得完了している状態
+                    self.musicDelegate?.catchData(count: 1)
                 } catch {
                 }
                 break

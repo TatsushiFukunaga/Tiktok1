@@ -36,6 +36,8 @@ class EditViewController: UIViewController {
         
         playerController?.removeFromParent()
         player = nil
+        player = AVPlayer(url: url)
+        player?.volume = 1
         
         view.backgroundColor = .black
         
