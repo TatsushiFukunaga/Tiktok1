@@ -49,7 +49,7 @@ class MusicModel {
                         
                         self.artistNameArray.append(json["results"][i]["artistName"].string!)
                         self.trackCensoredNameArray.append(json["results"][i]["trackCensoredName"].string!)
-                        self.preViewUrlArray.append(json["results"][i]["preViewUrl"].string!)
+                        self.preViewUrlArray.append(json["results"][i]["previewUrl"].string!)
                         self.artworkUrl100Array.append(json["results"][i]["artworkUrl100"].string!)
                     }
                     //すべてのデータが取得完了している状態

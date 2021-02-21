@@ -43,12 +43,14 @@ class ShareViewController: UIViewController {
         
         playerController?.removeFromParent()
         player = nil
+        player = AVPlayer(url: url)
+        player?.volume = 1
         
         view.backgroundColor = .black
         
         playerController = AVPlayerViewController()
         playerController?.videoGravity = .resizeAspectFill
-        playerController?.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - 100)
+        playerController?.view.frame = CGRect(x: 29, y: 88, width: 317, height: 455)
         playerController?.showsPlaybackControls = false
         playerController?.player = player!
         self.addChild(playerController!)
@@ -101,6 +103,7 @@ class ShareViewController: UIViewController {
         let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view
         activityController.popoverPresentationController?.sourceRect = self.view.frame
+        self.present(activityController, animated: true, completion: nil)
     }
     
     
